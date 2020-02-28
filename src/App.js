@@ -7,6 +7,7 @@ import { AuthContext } from "./context/auth";
 
 function App() {
     return (
+        // if Provider value set to false, useAuth always false
         <AuthContext.Provider value={false}>
             <Router>
                 <div>
