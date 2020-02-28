@@ -1,11 +1,13 @@
-import React from "react";
-import { BrowserRouter as Router, Link, Route } from "react-router-dom";
-import PrivateRoute from "./PrivateRoute";
-import Home from "./pages/Home";
-import Admin from "./pages/Admin";
-import { AuthContext } from "./context/auth";
+import React from 'react';
+import { BrowserRouter as Router, Link, Route } from 'react-router-dom';
+import PrivateRoute from './PrivateRoute';
+import Home from './pages/Home';
+import Admin from './pages/Admin';
+import Login from './pages/Login';
+import Signup from './pages/Signup';
+import { AuthContext } from './context/auth';
 
-function App() {
+function App(props) {
     return (
         // if Provider value set to false, useAuth always false
         <AuthContext.Provider value={false}>
@@ -20,6 +22,8 @@ function App() {
                         </li>
                     </ul>
                     <Route exact path="/" component={Home} />
+                    <Route path="/login" component={Login} />
+                    <Route path="/signup" component={Signup} />
                     {/* Admin uses PrivateRoute to require authentication */}
                     <PrivateRoute exact path="/admin" component={Admin} />
                 </div>
