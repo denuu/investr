@@ -8,7 +8,7 @@ import Signup from './pages/Signup';
 import { AuthContext } from './context/auth';
 
 function App(props) {
-    const [authTokens, setAuthTokens] = useState();
+    const [authTokens, setAuthTokens] = useState(localStorage.getItem('authTokens') || '');
 
     const setTokens = (data) => {
         localStorage.setItem('tokens', JSON.stringify(data));
